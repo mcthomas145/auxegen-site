@@ -176,12 +176,13 @@
   .apply-sec .sec-head{text-align:center;margin:0 auto 40px}
   .apply-sec .sec-head h2{color:#fff}
   .apply-sec .sec-head p{color:rgba(255,255,255,.72)}
-  .embed-shell{max-width:840px;margin:0 auto;background:#fff;border-radius:22px;box-shadow:0 40px 90px -40px rgba(0,0,0,.7);overflow:hidden}
-  .embed-bar{display:flex;align-items:center;gap:9px;padding:15px 22px;background:var(--paper-2);border-bottom:1px solid var(--line)}
-  .embed-bar .dot{width:11px;height:11px;border-radius:50%}
-  .embed-bar .dot:nth-child(1){background:var(--red)}.embed-bar .dot:nth-child(2){background:#d9b24b}.embed-bar .dot:nth-child(3){background:#7bbf8f}
-  .embed-bar small{margin-left:10px;color:var(--muted);font-size:.82rem;font-weight:600}
-  #embed-target{min-height:520px}
+  .embed-shell{position:relative;max-width:760px;margin:0 auto;background:#16161b;border:1px solid rgba(255,255,255,.1);border-radius:18px;box-shadow:0 40px 90px -45px rgba(0,0,0,.8);overflow:hidden}
+  .embed-shell::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--red-bright));z-index:2}
+  .embed-head{display:flex;align-items:center;gap:12px;padding:20px 30px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .embed-head .eh-ic{width:38px;height:38px;border-radius:10px;background:rgba(232,0,0,.16);color:var(--red-bright);display:grid;place-items:center;flex:none}
+  .embed-head b{font-size:1rem;color:#fff;line-height:1.2}
+  .embed-head small{display:block;font-size:.8rem;color:rgba(255,255,255,.6)}
+  #embed-target{min-height:0}
   .embed-placeholder{padding:64px 40px;text-align:center;color:var(--muted)}
   .ep-icon{width:60px;height:60px;border-radius:16px;background:rgba(232,0,0,.1);color:var(--red);display:grid;place-items:center;margin:0 auto 20px}
   .embed-placeholder h4{font-size:1.4rem;color:var(--ink);margin-bottom:10px}
@@ -244,30 +245,31 @@
 </style>
 
 <style>
-  #leadFormWrap{padding:30px 30px 36px;text-align:left}
-  .lf-intro{font-size:.92rem;color:var(--muted);margin-bottom:20px}
+  #leadFormWrap{padding:30px 30px 36px;text-align:left;color-scheme:dark}
+  .lf-intro{font-size:.92rem;color:rgba(255,255,255,.62);margin-bottom:20px}
   .lf-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
   .lf-field{display:flex;flex-direction:column;gap:6px}
   .lf-field.full{grid-column:1 / -1}
-  .lf-field label{font-size:.82rem;font-weight:600;color:var(--ink-soft)}
-  .lf-field .req{color:var(--red)}
-  .lf-field input,.lf-field select,.lf-field textarea{font-family:inherit;font-size:.95rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 13px;transition:border-color .2s,box-shadow .2s}
-  .lf-field input:focus,.lf-field select:focus,.lf-field textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(232,0,0,.12)}
+  .lf-field label{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.82)}
+  .lf-field .req{color:var(--red-bright)}
+  .lf-field input,.lf-field select,.lf-field textarea{font-family:inherit;font-size:.95rem;color:#fff;background:#0f0f12;border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 13px;transition:border-color .2s,box-shadow .2s}
+  .lf-field input::placeholder,.lf-field textarea::placeholder{color:rgba(255,255,255,.4)}
+  .lf-field input:focus,.lf-field select:focus,.lf-field textarea:focus{outline:none;border-color:var(--red-bright);box-shadow:0 0 0 3px rgba(232,0,0,.18)}
   .lf-field textarea{min-height:92px;resize:vertical}
   .lf-funding{display:flex;flex-wrap:wrap;gap:10px}
-  .lf-check{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:10px;padding:11px 14px;cursor:pointer;font-size:.92rem;font-weight:500;transition:border-color .2s,background .2s}
+  .lf-check{display:flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px 14px;cursor:pointer;font-size:.92rem;font-weight:500;color:rgba(255,255,255,.85);transition:border-color .2s,background .2s}
   .lf-check input{accent-color:var(--red);width:16px;height:16px}
-  .lf-check:has(input:checked){border-color:var(--red);background:rgba(232,0,0,.05)}
-  .lf-fine{font-size:.78rem;color:var(--muted);margin-top:14px;line-height:1.5}
-  .lf-error{background:rgba(232,0,0,.07);border:1px solid rgba(232,0,0,.3);color:var(--red-deep);border-radius:10px;padding:13px 15px;font-size:.9rem;margin:16px 0}
+  .lf-check:has(input:checked){border-color:var(--red);background:rgba(232,0,0,.14);color:#fff}
+  .lf-fine{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:14px;line-height:1.5}
+  .lf-error{background:rgba(232,0,0,.13);border:1px solid rgba(232,0,0,.45);color:#ff7a7a;border-radius:10px;padding:13px 15px;font-size:.9rem;margin:16px 0}
   .lf-error ul{margin:6px 0 0 18px}
   #lfSubmit{margin-top:18px;width:100%;justify-content:center}
   #lfSubmit[disabled]{opacity:.6;cursor:default}
-  #leadSuccess{padding:58px 36px;text-align:center}
-  #leadSuccess .ls-ic{width:64px;height:64px;border-radius:50%;background:rgba(40,160,90,.12);color:#1f9d57;display:grid;place-items:center;margin:0 auto 18px}
-  #leadSuccess h3{font-family:'Fraunces',serif;font-size:1.6rem;margin-bottom:10px}
-  #leadSuccess p{color:var(--muted);max-width:30em;margin:0 auto}
-  #leadSuccess .ref{display:inline-block;margin-top:16px;background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:9px 16px;font-weight:700;color:var(--ink);letter-spacing:.02em}
+  #leadSuccess{padding:58px 36px;text-align:center;color-scheme:dark}
+  #leadSuccess .ls-ic{width:64px;height:64px;border-radius:50%;background:rgba(40,160,90,.18);color:#46c882;display:grid;place-items:center;margin:0 auto 18px}
+  #leadSuccess h3{font-family:'Fraunces',serif;font-size:1.6rem;margin-bottom:10px;color:#fff}
+  #leadSuccess p{color:rgba(255,255,255,.7);max-width:30em;margin:0 auto}
+  #leadSuccess .ref{display:inline-block;margin-top:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:9px 16px;font-weight:700;color:#fff;letter-spacing:.02em}
   @media(max-width:560px){.lf-grid{grid-template-columns:1fr}}
 </style>
 <script src="config.js"></script>
@@ -307,7 +309,7 @@
 
 <section class="apply-sec"><div class="wrap">
   <div class="embed-shell reveal">
-    <div class="embed-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><small>Secure application &middot; powered by our funding partner</small></div>
+    <div class="embed-head"><span class="eh-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M6 10V8a6 6 0 0 1 12 0v2M5 10h14v10H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span><b>Secure application</b><small>Encrypted &middot; reviewed by our funding partner</small></span></div>
     <!-- ============================================================
          PASTE YOUR PARTNER'S EMBED / IFRAME CODE INSIDE #embed-target
          and delete the .embed-placeholder block below. Example:
