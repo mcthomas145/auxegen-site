@@ -380,10 +380,7 @@
 </div></footer>
 <script>
   const hdr=document.getElementById('hdr');
-  function firstSecBottom(){var sec=document.querySelector('section');var hh=hdr.offsetHeight||80;return sec?Math.max(90,sec.offsetHeight-hh):150;}
-  var SHRINK=firstSecBottom();
-  window.addEventListener('resize',function(){SHRINK=firstSecBottom();},{passive:true});
-  const onScroll=()=>{var y=window.scrollY;hdr.classList.toggle('scrolled',y>20);hdr.classList.toggle('shrunk',y>SHRINK);};
+  const onScroll=()=>{var y=window.scrollY;hdr.classList.toggle('scrolled',y>20);hdr.classList.toggle('shrunk',y>24);};
   onScroll();window.addEventListener('scroll',onScroll,{passive:true});
   document.getElementById('yr').textContent=new Date().getFullYear();
   const io=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.14});
