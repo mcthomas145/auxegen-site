@@ -6,4 +6,4 @@
  *     e.g. "https://auxegen-lead-proxy.YOURNAME.workers.dev"
  * The API key is NEVER stored here — it lives on the server/worker.
  * -------------------------------------------------------------- */
-window.AUXEGEN_LEAD_ENDPOINT = "lead-proxy.php" = "https://auxegen-lead-proxy.matt-c78.workers.dev/";
+window.AUXEGEN_LEAD_ENDPOINT = "https://auxegen-lead-proxy.matt-c78.workers.dev";
