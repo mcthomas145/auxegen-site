@@ -1,6 +1,12 @@
-# wrangler files
-.wrangler
-.dev.vars*
-!.dev.vars.example
-.env*
-!.env.example
+# Secrets — never commit your API key
+.env
+.env.*
+*.key
+.htaccess          # may contain SetEnv STARTCAP_API_KEY on the server
+config.local.js
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
