@@ -320,8 +320,11 @@
        submissions automatically, point action= at your form service
        (e.g. Formspree) or your own endpoint and remove the onsubmit.
        ============================================================ -->
-  <form class="cf-form reveal" id="contactForm">
+  <form class="cf-form reveal" id="contactForm" action="https://formsubmit.co/info@auxegenfund.com" method="POST">
     <input type="hidden" name="_subject" value="New contact inquiry — Auxegen Funding">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://auxegenfund.com/contact.html?sent=1">
     <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
     <div class="cf-grid">
       <div class="cf-field"><label for="name">Full name</label><input id="name" name="name" type="text" required></div>
@@ -337,8 +340,7 @@
         <span class="cf-note">Please don't include sensitive details like your SSN or bank account here &mdash; you'll provide those securely in the application.</span>
       </div>
     </div>
-    <div class="cf-error" id="cfError" style="display:none"></div>
-    <button type="submit" class="btn btn-primary cf-submit" id="cfSubmit">Send message &rarr;</button>
+    <button type="submit" class="btn btn-primary cf-submit">Send message &rarr;</button>
   </form>
   <div class="cf-form" id="cfSuccess" style="display:none">
     <div class="cs-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -347,30 +349,14 @@
   </div>
 </div></div></section>
 <script>
-(function(){
-  var form=document.getElementById('contactForm');
-  if(!form) return;
-  var ENDPOINT="https://formsubmit.co/ajax/info@auxegenfund.com";
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var btn=document.getElementById('cfSubmit'), err=document.getElementById('cfError');
-    if(form.querySelector('[name=_honey]').value){return;}
-    err.style.display='none'; btn.disabled=true; var orig=btn.innerHTML; btn.innerHTML='Sending…';
-    fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
-      .then(function(r){return r.json();})
-      .then(function(j){
-        if(j&&(j.success===true||j.success==='true')){
-          form.style.display='none';
-          document.getElementById('cfSuccess').style.display='block';
-        } else { throw new Error((j&&j.message)||'error'); }
-      })
-      .catch(function(){
-        btn.disabled=false; btn.innerHTML=orig;
-        err.innerHTML='Sorry, something went wrong sending your message. Please email us directly at <a href="mailto:info@auxegenfund.com" style="color:#ff7a7a;text-decoration:underline">info@auxegenfund.com</a> or call 463.215.6009.';
-        err.style.display='block';
-      });
-  });
-})();
+  (function(){
+    if(/[?&]sent=1/.test(location.search)){
+      var f=document.getElementById('contactForm'); if(f) f.style.display='none';
+      var s=document.getElementById('cfSuccess');
+      if(s){ s.style.display='block'; try{ s.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){} }
+      if(history.replaceState){ history.replaceState(null,'',location.pathname); }
+    }
+  })();
 </script>
 
 <footer><div class="wrap">
