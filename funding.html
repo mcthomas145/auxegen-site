@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ — Auxegen Funding</title>
-<meta name="description" content="Common questions about applying for small business funding with Auxegen.">
+<title>Funding Options — Auxegen Funding</title>
+<meta name="description" content="Term loans and business lines of credit built to fit your small business.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -242,17 +242,71 @@
     .wrap{padding:0 20px}
   }
 </style>
+
+<style>
+  .ftab-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow)}
+  .ftab-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--red),var(--red-bright));z-index:2}
+  .ftab-nav{display:flex;flex-wrap:wrap;gap:2px;padding:16px 16px 0;border-bottom:1px solid var(--line)}
+  .ftab-btn{appearance:none;border:none;background:none;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;font-size:1rem;font-weight:600;color:var(--muted);padding:14px 22px;border-radius:10px 10px 0 0;position:relative;transition:color .2s}
+  .ftab-btn:hover{color:var(--ink)}
+  .ftab-btn[aria-selected="true"]{color:var(--red)}
+  .ftab-btn[aria-selected="true"]::after{content:"";position:absolute;left:16px;right:16px;bottom:-1px;height:3px;background:var(--red);border-radius:3px}
+  .ftab-panel{display:none;padding:34px 36px 36px;animation:ftabf .35s ease}
+  .ftab-panel.active{display:block}
+  @keyframes ftabf{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .ftab-panel h3{font-size:1.7rem;margin-bottom:4px}
+  .ftab-tag{font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .ftab-panel p.sum{color:var(--muted);font-size:1.02rem;max-width:56em;margin-bottom:24px}
+  .ftab-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:24px}
+  .ftab-stat{background:#fff;padding:18px 20px}
+  .ftab-stat small{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:7px}
+  .ftab-stat b{font-family:'Fraunces',serif;font-size:1.22rem;font-weight:600;color:var(--ink)}
+  .ftab-notes{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0}
+  .ftab-notes li{display:flex;gap:11px;align-items:flex-start;font-size:.95rem}
+  .ftab-notes li svg{color:var(--red);flex:none;margin-top:3px}
+  .ftab-fine{font-size:.8rem;color:var(--muted);margin-top:20px;line-height:1.5}
+  @media(max-width:760px){.ftab-stats{grid-template-columns:1fr 1fr}.ftab-panel{padding:28px 22px 30px}}
+  @media(max-width:480px){.ftab-stats{grid-template-columns:1fr}.ftab-btn{flex:1;padding:12px 8px;font-size:.88rem}}
+</style>
+
+<style>
+  body.dark-page{background:var(--ink);color:rgba(255,255,255,.85)}
+  .dark-page section.block{background:transparent}
+  .dark-page .how{background:#0b0b0d}
+  .dark-page .sec-head h2{color:#fff}
+  .dark-page .sec-head p{color:rgba(255,255,255,.68)}
+  .dark-page .ftab-card{background:var(--charcoal);border-color:rgba(255,255,255,.1);box-shadow:0 30px 70px -34px rgba(0,0,0,.8)}
+  .dark-page .ftab-nav{border-bottom-color:rgba(255,255,255,.12)}
+  .dark-page .ftab-btn{color:rgba(255,255,255,.6)}
+  .dark-page .ftab-btn:hover{color:#fff}
+  .dark-page .ftab-btn[aria-selected="true"]{color:var(--red-bright)}
+  .dark-page .ftab-btn[aria-selected="true"]::after{background:var(--red-bright)}
+  .dark-page .ftab-panel h3{color:#fff}
+  .dark-page .ftab-panel p.sum{color:rgba(255,255,255,.72)}
+  .dark-page .ftab-stats{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.1)}
+  .dark-page .ftab-stat{background:var(--ink)}
+  .dark-page .ftab-stat small{color:rgba(255,255,255,.55)}
+  .dark-page .ftab-stat b{color:#fff}
+  .dark-page .ftab-notes li{color:rgba(255,255,255,.82)}
+  .dark-page .ftab-notes li svg{color:var(--red-bright)}
+  .dark-page .ftab-fine{color:rgba(255,255,255,.5)}
+  .dark-page .step h4{color:#fff}
+  .dark-page .step p{color:rgba(255,255,255,.7)}
+  .dark-page .step .num{background:#1c1c21;border:1px solid rgba(255,255,255,.16);color:#fff}
+  .dark-page .step.active .num{background:var(--red);border-color:var(--red);color:#fff}
+  .dark-page .step:not(:last-child)::before{background:rgba(255,255,255,.14)}
+</style>
 </head>
-<body>
+<body class="dark-page">
 <header id="hdr">
   <div class="wrap">
     <nav>
       <a href="index.html" class="brand-link" aria-label="Auxegen Funding home"><span class="brandmark brand-nav"></span></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="funding.html">Funding</a>
+        <a href="funding.html" class="active">Funding</a>
         <a href="about.html">About</a>
-        <a href="faq.html" class="active">FAQ</a>
+        <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-cta">
@@ -272,13 +326,30 @@
   </div>
 </header>
 <section class="pagehead"><div class="grid-lines"></div><div class="grain"></div><div class="wrap"><div class="inner">
-  <span class="eyebrow">Questions, answered</span><h1>Frequently asked</h1>
-  <p>Everything you need to know before you apply. Still unsure? Call us at 463.215.6009.</p>
+  <span class="eyebrow">What we fund</span>
+  <h1>Funding built to <em>fit</em> your business</h1>
+  <p>Business and personal funding options &mdash; matched to your goals through our network of lenders. Tap a tab below to see how each one works.</p>
 </div></div></section>
-<section class="block"><div class="wrap"><div class="faq-grid"><div class="faq-item reveal"><button class="faq-q">Will applying affect my credit score?<span class="pm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="faq-a"><p>Checking what you qualify for uses a soft inquiry, which does not affect your credit score. A hard inquiry may occur only if you choose to move forward with a specific offer &mdash; and you'll always be told before that happens.</p></div></div><div class="faq-item reveal"><button class="faq-q">What do I need to qualify?<span class="pm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="faq-a"><p>Requirements vary by program and lender. Approvals are driven largely by your credit profile, and for business products, by time in business and revenue. Final eligibility, amounts, and terms are determined by the lender's underwriting.</p></div></div><div class="faq-item reveal"><button class="faq-q">How quickly can I receive funds?<span class="pm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="faq-a"><p>It depends on the program. A personal line of credit can fund in as little as 3 business days, while larger business loans typically take 15&ndash;30 business days. Timing also depends on your documentation and the lender's underwriting.</p></div></div><div class="faq-item reveal"><button class="faq-q">What documents will I need?<span class="pm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="faq-a"><p>Typically a few months of recent business bank statements and basic business details. Some offers may request additional documentation during underwriting.</p></div></div><div class="faq-item reveal"><button class="faq-q">Is there any cost or obligation to apply?<span class="pm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="faq-a"><p>No. Applying and reviewing your options is free and carries no obligation. You're never committed to anything until you review and accept a specific offer.</p></div></div><div class="faq-item reveal"><button class="faq-q">What can I use the funding for?<span class="pm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="faq-a"><p>Most business purposes &mdash; expansion, equipment, inventory, hiring, renovations, marketing, or bridging cash-flow gaps. Specific restrictions, if any, depend on the offer you accept.</p></div></div></div></div></section>
+
+<section class="block"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Business lending</span><h2>Funded through your business</h2><p>For established, registered businesses. Tap a tab to see the basics of each structure.</p></div>
+  <div class="ftab-card reveal" data-card="business"><div class="ftab-nav" role="tablist"><button class="ftab-btn" role="tab" aria-selected="true" data-tab="tl">Term Loans</button><button class="ftab-btn" role="tab" aria-selected="false" data-tab="cs">Credit Stacking</button><button class="ftab-btn" role="tab" aria-selected="false" data-tab="loc">Line of Credit</button></div><div class="ftab-panel active" data-panel="tl"><h3>Business Term Loans</h3><div class="ftab-tag">Fixed lump sum &middot; installment payoff</div><p class="sum">Installment-based business funding with a fixed payoff structure &mdash; commonly used for debt consolidation, large purchases, or planned short-term capital needs. All quotes are provided for stacked funding.</p><div class="ftab-stats"><div class="ftab-stat"><small>Funding range</small><b>$50K &ndash; $400K</b></div><div class="ftab-stat"><small>Rates</small><b>7% &ndash; 14%</b></div><div class="ftab-stat"><small>Terms</small><b>Up to 10 years</b></div><div class="ftab-stat"><small>Funding speed</small><b>15 &ndash; 30 business days</b></div></div><ul class="ftab-notes"><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Fixed lump sum repaid on a set schedule</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Non-stackable funding</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Document-intensive process can extend timelines; larger amounts may require additional underwriting</li></ul><p class="ftab-fine">Final amounts, rates, and terms are set by the lender based on your credit profile.</p></div><div class="ftab-panel" data-panel="cs"><h3>Business Credit Stacking</h3><div class="ftab-tag">Revolving &middot; multiple approvals combined</div><p class="sum">A strategy-driven approach that combines multiple business credit approvals to create larger aggregate access to capital.</p><div class="ftab-stats"><div class="ftab-stat"><small>Funding range</small><b>$10K &ndash; $250K</b></div><div class="ftab-stat"><small>Rates</small><b>0% &ndash; 29%</b></div><div class="ftab-stat"><small>Structure</small><b>Revolving</b></div><div class="ftab-stat"><small>Funding speed</small><b>~15 business days</b></div></div><ul class="ftab-notes"><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>0% introductory rate for the first 12&ndash;18 months</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>No income verification required &mdash; usually no job, W-2, or tax returns needed</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Combines several approvals for larger total access to capital</li></ul><p class="ftab-fine">Final amounts, rates, and terms are set by the lender based on your credit profile.</p></div><div class="ftab-panel" data-panel="loc"><h3>Business Line of Credit</h3><div class="ftab-tag">Revolving &middot; draw as needed</div><p class="sum">A revolving business credit line that gives you access to capital as needed, rather than as one lump-sum disbursement.</p><div class="ftab-stats"><div class="ftab-stat"><small>Funding range</small><b>$50K &ndash; $250K</b></div><div class="ftab-stat"><small>Rates</small><b>9.75% &ndash; 22%</b></div><div class="ftab-stat"><small>Draw period</small><b>2 &ndash; 5 years</b></div><div class="ftab-stat"><small>Funding speed</small><b>15 &ndash; 30 business days</b></div></div><ul class="ftab-notes"><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>No down payment, and early payoff penalties are rare</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Reusable, revolving access instead of a one-time lump sum</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Stackable, though available through a smaller set of lenders</li></ul><p class="ftab-fine">Final amounts, rates, and terms are set by the lender based on your credit profile.</p></div></div>
+  <div class="sec-head reveal" style="margin-top:74px"><span class="eyebrow">Personal funding</span><h2>Funded through your personal credit</h2><p>Use strong personal credit to access business-purpose capital. Tap a tab to see the basics.</p></div>
+  <div class="ftab-card reveal" data-card="personal"><div class="ftab-nav" role="tablist"><button class="ftab-btn" role="tab" aria-selected="true" data-tab="tl">Term Loans</button><button class="ftab-btn" role="tab" aria-selected="false" data-tab="cs">Credit Stacking</button><button class="ftab-btn" role="tab" aria-selected="false" data-tab="loc">Line of Credit</button></div><div class="ftab-panel active" data-panel="tl"><h3>Personal Term Loans</h3><div class="ftab-tag">Fixed lump sum &middot; installment payoff</div><p class="sum">Installment-based personal funding with a fixed payoff structure &mdash; commonly used for debt consolidation, large purchases, or planned short-term capital needs. All quotes are provided for stacked funding.</p><div class="ftab-stats"><div class="ftab-stat"><small>Funding range</small><b>$25K &ndash; $400K</b></div><div class="ftab-stat"><small>Rates</small><b>From 7%*</b></div><div class="ftab-stat"><small>Terms</small><b>Up to 7 years</b></div><div class="ftab-stat"><small>Funding speed</small><b>~10 business days</b></div></div><ul class="ftab-notes"><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>No down payments and no early payoff penalties</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Lifetime access to these lenders with no future renewal fee, assuming on-time payments</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Ideal for using strong personal credit to access business-purpose capital</li></ul><p class="ftab-fine">*Starting rate shown is for excellent credit. Final amounts, rates, and terms are set by the lender based on your credit profile.</p></div><div class="ftab-panel" data-panel="cs"><h3>Personal Credit Stacking</h3><div class="ftab-tag">Revolving &middot; multiple approvals combined</div><p class="sum">A strategy-driven approach that combines multiple personal credit approvals to create larger aggregate access to capital.</p><div class="ftab-stats"><div class="ftab-stat"><small>Funding range</small><b>$10K &ndash; $250K</b></div><div class="ftab-stat"><small>Rates</small><b>0% &ndash; 29%</b></div><div class="ftab-stat"><small>Structure</small><b>Revolving</b></div><div class="ftab-stat"><small>Funding speed</small><b>~15 business days</b></div></div><ul class="ftab-notes"><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>No income verification required &mdash; usually no job, W-2, or tax returns needed</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Combines several approvals for larger total access to capital</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Ideal for using strong personal credit to access business-purpose capital</li></ul><p class="ftab-fine">Final amounts, rates, and terms are set by the lender based on your credit profile.</p></div><div class="ftab-panel" data-panel="loc"><h3>Personal Line of Credit</h3><div class="ftab-tag">Revolving &middot; draw as needed</div><p class="sum">A revolving personal credit line that gives you access to capital as you need it, rather than as one lump-sum disbursement.</p><div class="ftab-stats"><div class="ftab-stat"><small>Funding range</small><b>$10K &ndash; $100K</b></div><div class="ftab-stat"><small>Rates</small><b>9.75% &ndash; 22%</b></div><div class="ftab-stat"><small>Draw period</small><b>2 &ndash; 5 years</b></div><div class="ftab-stat"><small>Funding speed</small><b>3 &ndash; 10 business days</b></div></div><ul class="ftab-notes"><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>No down payment, and early payoff penalties are rare</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Reusable access to capital instead of a one-time lump sum</li><li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Stackable, though available through a smaller set of lenders</li></ul><p class="ftab-fine">Final amounts, rates, and terms are set by the lender based on your credit profile.</p></div></div>
+</div></section>
+
+<section class="block how"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Simple process</span><h2>From application to funded in four steps</h2><p>No paperwork mountains, no waiting weeks for an answer.</p></div>
+  <div class="steps">
+    <div class="step reveal"><div class="num">1</div><h4>Apply online</h4><p>A short, secure application &mdash; about ten minutes, with no impact to your credit to check.</p></div>
+    <div class="step reveal"><div class="num">2</div><h4>Get matched</h4><p>We run your profile through our funding partners to find the offers you qualify for.</p></div>
+    <div class="step reveal active"><div class="num">3</div><h4>Review offers</h4><p>Compare your options with a dedicated advisor &mdash; no pressure, no hidden terms.</p></div>
+    <div class="step reveal"><div class="num">4</div><h4>Get funded</h4><p>Accept the offer that fits and receive your capital, often within a few business days.</p></div>
+  </div>
+</div></section>
 
 <section class="cta-band"><div class="wrap"><div class="cta-card reveal">
-  <h2>Still have questions?</h2><p>Talk to a funding advisor, or start your application &mdash; it only takes about ten minutes.</p>
+  <h2>See what you qualify for</h2><p>It takes about ten minutes and won't affect your credit score to check.</p>
   <div class="hero-actions">
     <a href="apply.html" class="btn btn-primary">Start your application <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="tel:4632156009" class="btn btn-light">Talk to an advisor</a>
@@ -312,5 +383,18 @@
   document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement,a=item.querySelector('.faq-a'),open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
   const burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu');
   if(burger)burger.addEventListener('click',()=>mmenu.classList.toggle('open'));
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.ftab-card').forEach(function(card){
+    var btns=card.querySelectorAll('.ftab-btn'), panels=card.querySelectorAll('.ftab-panel');
+    btns.forEach(function(btn){ btn.addEventListener('click', function(){
+      var t=btn.getAttribute('data-tab');
+      btns.forEach(function(b){ b.setAttribute('aria-selected', b===btn ? 'true':'false'); });
+      panels.forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-panel')===t); });
+    }); });
+  });
+})();
 </script>
 </body></html>
