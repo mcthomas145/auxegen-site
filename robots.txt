@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://auxegenfund.com/sitemap.xml
